@@ -1,0 +1,117 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Documents</title>
+</head>
+<body>
+    <h1>Your Documents</h1>
+    <ul>
+        {% for document in documents %}
+            <li>
+                <a href="{% url 'document_detail' pk=document.pk %}">{{ document.title }}</a>
+            </li>
+        {% empty %}
+            <li>No documents found.</li>
+        {% endfor %}
+    </ul>
+
+    <br>
+    <a href="{% url 'create_document' %}">Create a New Document</a>  <-- Link to create a new document - ->
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Documents</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;  /* Black background */
+            color: #f5c400;  /* Gold text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;  /* Larger title */
+            margin-bottom: 20px;
+        }
+        .cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;  /* Space between cards */
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;  /* Max width for the card container */
+        }
+        .card {
+            background-color: #222222;
+            color: #f5c400;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Soft shadow for cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            font-size: 1.1em;
+        }
+        .card a {
+            text-decoration: none;
+            color: #f5c400;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .card a:hover {
+            color: #ffd700;
+        }
+        .card:hover {
+            transform: translateY(-5px);  /* Slight lift on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);  /* Stronger shadow on hover */
+        }
+        .empty-message {
+            font-size: 1.2em;
+            color: #f5c400;
+        }
+        a.create-doc-button {
+            text-decoration: none;
+            color: #f5c400;
+            font-weight: bold;
+            background-color: #222222;
+            padding: 15px 25px;
+            border-radius: 50px;
+            border: 1px solid #f5c400;
+            margin-top: 30px;
+            transition: background-color 0.3s ease;
+        }
+        a.create-doc-button:hover {
+            background-color: #f5c400;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <h1>Your Documents</h1>
+
+    <div class="cards-container">
+        {% for document in documents %}
+            <div class="card">
+                <a href="{% url 'document_detail' pk=document.pk %}">{{ document.title }}</a>
+            </div>
+        {% empty %}
+            <div class="card empty-message">No documents found.</div>
+        {% endfor %}
+    </div>
+
+    <a href="{% url 'create_document' %}" class="create-doc-button">Create a New Document</a>  <!-- Link to create a new document -->
+</body>
+</html>

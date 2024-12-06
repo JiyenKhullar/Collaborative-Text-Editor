@@ -1,0 +1,106 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login to your account</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;  /* Black background */
+            color: #f5c400;  /* Gold text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center; /* Center-align the text */
+        }
+        h2 {
+            font-size: 2.5em;  /* Increased font size for the header */
+            margin-bottom: 30px;
+        }
+        form {
+            width: 100%;
+            max-width: 400px;  /* Limit the width of the form */
+            background-color: #111111;  /* Darker background for form */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);  /* Soft shadow for form */
+            text-align: left; /* Align form fields to the left */
+        }
+        input {
+            width: 100%;  /* Ensure the input takes up full width of the form */
+            max-width: 380px;  /* Limit the maximum width */
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #f5c400;
+            border-radius: 5px;
+            background-color: #222222;
+            color: #f5c400;
+            font-size: 1.1em;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #f5c400;
+            color: #000000;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #ffd700;
+        }
+        p {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        a {
+            text-decoration: none;
+            color: #f5c400;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <h2>Login to your account</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- This renders the form fields, ensuring they align properly -->
+        <button type="submit">Login</button>
+    </form>
+    
+    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+</body>
+</html>

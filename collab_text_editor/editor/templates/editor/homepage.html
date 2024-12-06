@@ -1,0 +1,80 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Collaborative Text Editor</title>
+</head>
+<body>
+    <h1>Welcome to the Collaborative Text Editor</h1>
+    <p><a href="{% url 'login' %}">Click here</a> to login.</p>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Text Editor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000000;  /* Black background */
+            color: #f5c400;  /* Gold text color */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center; /* Center-align the text */
+        }
+        h1 {
+            font-size: 3em;  /* Increased font size */
+            margin-bottom: 10px;
+            margin-top: -30px;  /* Raised the title slightly */
+        }
+        p {
+            font-size: 1.2em;  /* Smaller font size for the author names */
+            margin-bottom: 50px;  /* Reduced the margin between title and authors */
+        }
+        a {
+            text-decoration: none;
+            color: #f5c400;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ffd700;
+        }
+        .login-button {
+            background-color: #f5c400;
+            color: #000000;
+            border: none;
+            padding: 20px 40px;  /* Increased padding for a bigger button */
+            font-size: 1.5em;  /* Increased font size */
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;  /* Ensure button is centered */
+            margin: 0 auto;
+        }
+        .login-button:hover {
+            background-color: #ffd700;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Collaborative Text Editor</h1>
+    <p>JIyen Khullar and Aditya Dogra</p>
+    <a href="{% url 'login' %}">
+        <button class="login-button">LOG IN</button>
+    </a>
+</body>
+</html>

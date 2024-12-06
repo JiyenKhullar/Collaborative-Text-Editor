@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>Register a new account</h2>
+    
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212; /* Dark background */
+            color: #f1c40f; /* Gold text */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #1e1e1e; /* Darker background for form container */
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form label {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #f1c40f;
+        }
+
+        form input {
+            padding: 12px;
+            margin-bottom: 10px;
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            color: #f1c40f;
+            border-radius: 6px; /* Refined border radius */
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        form input:focus {
+            border-color: #f1c40f; /* Highlight border on focus */
+            box-shadow: 0 0 5px rgba(241, 196, 15, 0.7); /* Focus glow effect */
+        }
+
+        .requirement {
+            font-size: 0.8rem;
+            color: #888; /* Slightly faded text for requirements */
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #f1c40f; /* Gold button */
+            border: none;
+            color: #121212; /* Dark text */
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 6px; /* Slightly rounded button */
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #d4ac0d; /* Darker gold on hover */
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .register-link a {
+            color: #f1c40f;
+            text-decoration: none;
+        }
+
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register a New Account</h2>
+        
+        <form method="POST">
+            {% csrf_token %}
+            
+            <!-- Username Input Field -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            <p class="requirement">Must be at least 6 characters.</p>
+
+            <!-- Email Input Field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <p class="requirement">Enter a valid email address.</p>
+
+            <!-- Password Input Field -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <p class="requirement">Must be at least 8 characters.</p>
+
+            <!-- Confirm Password Input Field -->
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password" required>
+            <p class="requirement">Passwords must match.</p>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="register-link">
+            <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>
+
